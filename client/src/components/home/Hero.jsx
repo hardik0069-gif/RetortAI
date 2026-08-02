@@ -1,4 +1,4 @@
-import Button from "../ui/button";
+import Button from "../ui/Button";
 function Hero() {
   return (
     <section className="flex min-h-[80vh] flex-col items-center justify-center px-6 text-center">
