@@ -1,0 +1,4 @@
+nosw_modules/
+__pycache__/
+.env
+.vscode/
