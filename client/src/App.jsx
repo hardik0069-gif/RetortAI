@@ -1,6 +1,10 @@
 function App() {
   return (
-    <h1>Welcome to RetortAI 🚀</h1>
+    <div className="min-h-screen bg-slate-950 text-white flex items-center justify-center">
+      <h1 className="text-5xl font-bold text-cyan-400">
+        Welcome to RetortAI 🚀
+      </h1>
+    </div>
   );
 }
 
