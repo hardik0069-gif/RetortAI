@@ -1,5 +1,5 @@
 export const APP = {
   name: "RetortAI",
   tagline: "Roast Smarter. Laugh Harder.",
-  version: "0.1.0",
+  github: "https://github.com/hardik0069-gif/RetortAI",
 };

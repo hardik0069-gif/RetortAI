@@ -1,20 +1,15 @@
 import Navbar from "../components/layout/Navbar";
-import Hero from "../components/home/Hero";
-import Features from "../components/home/Features";
-import Footer from "../components/home/Footer";
 
 function Home() {
   return (
     <div className="min-h-screen bg-slate-950">
-
       <Navbar />
 
-      <Hero />
-
-      <Features />
-
-      <Footer />
-
+      <main className="flex h-[calc(100vh-64px)] items-center justify-center">
+        <h1 className="text-5xl font-bold text-white">
+          RetortAI
+        </h1>
+      </main>
     </div>
   );
 }
