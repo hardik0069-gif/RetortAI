@@ -1,10 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import { ChatProvider } from "./context/ChatContext";
 import Home from "./pages/Home";
 import Chat from "./pages/Chat";
 
 function App() {
   return (
+    <ChatProvider>
     <BrowserRouter>
       <Routes>
 
@@ -20,6 +21,7 @@ function App() {
 
       </Routes>
     </BrowserRouter>
+    </ChatProvider>
   );
 }
 
