@@ -1,51 +1,68 @@
 import { Menu } from "lucide-react";
 import { APP } from "../../config/app";
+import Button from "../ui/Button";
 
 function Navbar() {
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-800 bg-slate-950/90 backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
+    <header className="sticky top-0 z-50 border-b border-slate-800/70 bg-slate-950/80 backdrop-blur-xl">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
 
         {/* Logo */}
-        <h1 className="text-2xl font-bold tracking-tight text-white">
+
+        <h1 className="text-3xl font-black tracking-tight text-white">
           {APP.name}
         </h1>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-8 md:flex">
+        {/* Desktop */}
+
+        <nav className="hidden items-center gap-10 lg:flex">
+
           <a
-            href="#"
+            href="#features"
             className="text-slate-300 transition hover:text-cyan-400"
           >
             Features
           </a>
 
           <a
-            href="#"
+            href="#roadmap"
             className="text-slate-300 transition hover:text-cyan-400"
           >
             Roadmap
           </a>
 
           <a
-            href="#"
+            href="#about"
             className="text-slate-300 transition hover:text-cyan-400"
           >
             About
           </a>
 
+        </nav>
+
+        {/* Right Side */}
+
+        <div className="hidden items-center gap-4 lg:flex">
+
           <a
             href={APP.github}
             target="_blank"
             rel="noreferrer"
-            className="rounded-lg border border-slate-700 px-4 py-2 text-slate-300 transition hover:border-cyan-400 hover:text-cyan-400"
           >
-            GitHub
+            <Button variant="secondary">
+              GitHub
+            </Button>
           </a>
-        </nav>
 
-        {/* Mobile Menu */}
-        <button className="rounded-lg border border-slate-700 p-2 text-slate-300 md:hidden">
+          <Button>
+            Start Chat
+          </Button>
+
+        </div>
+
+        {/* Mobile */}
+
+        <button className="rounded-xl border border-slate-700 p-3 text-slate-300 lg:hidden">
           <Menu size={22} />
         </button>
 
