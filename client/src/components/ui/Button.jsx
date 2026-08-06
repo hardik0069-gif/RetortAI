@@ -1,10 +1,18 @@
 function Button({
   children,
+  variant = "primary",
   className = "",
 }) {
+  const styles = {
+    primary:
+      "bg-cyan-500 text-slate-950 hover:bg-cyan-400",
+    secondary:
+      "border border-slate-700 text-white hover:border-cyan-400 hover:text-cyan-400",
+  };
+
   return (
     <button
-      className={`rounded-xl bg-cyan-500 px-7 py-3 font-semibold text-slate-950 transition duration-300 hover:scale-105 hover:bg-cyan-400 ${className}`}
+      className={`rounded-xl px-6 py-3 font-semibold transition-all duration-300 ${styles[variant]} ${className}`}
     >
       {children}
     </button>
