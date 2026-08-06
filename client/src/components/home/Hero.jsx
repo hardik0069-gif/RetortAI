@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "../ui/Button";
 import { APP } from "../../config/app";
 import useRandomTagline from "../../hooks/useRandomTagline";
@@ -29,9 +30,11 @@ function Hero() {
 
       <div className="mt-12 flex flex-col gap-4 sm:flex-row">
 
+      <Link to="/chat">
       <Button>
       Start Chat
       </Button>
+      </Link>
 
       <a
       href={APP.github}

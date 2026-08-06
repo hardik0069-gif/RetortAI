@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Menu } from "lucide-react";
 import { APP } from "../../config/app";
 import Button from "../ui/Button";
@@ -54,9 +55,11 @@ function Navbar() {
             </Button>
           </a>
 
+          <Link to="/chat">
           <Button>
-            Start Chat
+          Start Chat
           </Button>
+          </Link>
 
         </div>
 
