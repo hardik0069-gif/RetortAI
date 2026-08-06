@@ -1,26 +1,29 @@
+const modes = [
+  "Friendly",
+  "Roast",
+  "Dark",
+  "Gen-Z",
+  "Random",
+];
+
 function ModeSelector() {
   return (
     <div className="mt-8 flex flex-wrap gap-3">
 
-      <button className="rounded-xl bg-cyan-500 px-5 py-2 font-medium text-slate-950">
-        Friendly
-      </button>
+      {modes.map((mode, index) => (
 
-      <button className="rounded-xl border border-slate-700 px-5 py-2">
-        Savage
-      </button>
+        <button
+          key={mode}
+          className={`rounded-xl px-5 py-2 transition ${
+            index === 0
+              ? "bg-cyan-500 text-slate-950"
+              : "border border-slate-700 hover:border-cyan-400"
+          }`}
+        >
+          {mode}
+        </button>
 
-      <button className="rounded-xl border border-slate-700 px-5 py-2">
-        Dark
-      </button>
-
-      <button className="rounded-xl border border-slate-700 px-5 py-2">
-        Gen-Z
-      </button>
-
-      <button className="rounded-xl border border-slate-700 px-5 py-2">
-        Random
-      </button>
+      ))}
 
     </div>
   );
