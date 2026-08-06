@@ -1,6 +1,10 @@
 import Button from "../ui/Button";
+import useRandomTagline from "../../hooks/useRandomTagline";
 
 function Hero() {
+  const tagline = useRandomTagline();
+  
+
   return (
     <section className="mx-auto flex min-h-[calc(100vh-64px)] max-w-5xl flex-col items-center justify-center px-6 text-center">
 
@@ -13,7 +17,7 @@ function Hero() {
       </h1>
 
       <h2 className="mt-6 max-w-3xl text-2xl font-semibold text-cyan-400 md:text-3xl">
-        Roast Smarter. Laugh Harder.
+        {tagline}
       </h2>
 
       <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-400">
