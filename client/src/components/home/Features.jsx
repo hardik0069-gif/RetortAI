@@ -1,45 +1,60 @@
-import SectionTitle from "../ui/SectionTitle";
 import FeatureCard from "./FeatureCard";
 
-const features = [
+const FEATURES = [
   {
-    title: "Fast Responses",
-    description: "Optimized for lightning-fast AI conversations.",
+    title: "Lightning Fast",
+    description:
+      "Receive AI responses in seconds without breaking your flow.",
   },
   {
-    title: "Multiple Modes",
-    description: "Friendly, Dark, Savage and many more personalities.",
+    title: "Multiple Personalities",
+    description:
+      "Switch between Friendly, Savage, Dark, Gen-Z and more.",
   },
   {
-    title: "Share Chats",
-    description: "Share conversations with a single click.",
+    title: "Share Conversations",
+    description:
+      "Generate shareable chat links with one click.",
   },
   {
-    title: "Auto Language",
-    description: "Understands Hindi, English and Hinglish naturally.",
+    title: "Language Aware",
+    description:
+      "Automatically understands English, Hindi and Hinglish.",
   },
   {
-    title: "Privacy First",
-    description: "Your conversations stay under your control.",
+    title: "Privacy Focused",
+    description:
+      "Your conversations remain under your control.",
   },
   {
-    title: "Premium UI",
-    description: "Clean, responsive and modern experience.",
+    title: "Modern Experience",
+    description:
+      "Clean interface built for desktop and mobile devices.",
   },
 ];
 
 function Features() {
   return (
-    <section className="relative z-10 mx-auto max-w-7xl px-6 py-28">
+    <section
+      id="features"
+      className="mx-auto max-w-7xl px-6 py-28"
+    >
+      <div className="mx-auto max-w-3xl text-center">
 
-      <SectionTitle
-        title="Why Choose RetortAI?"
-        subtitle="Everything you need for fun, fast and intelligent conversations."
-      />
+        <h2 className="text-4xl font-black text-white">
+          Why RetortAI?
+        </h2>
 
-      <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <p className="mt-6 text-lg leading-8 text-slate-400">
+          Everything you need for fast, intelligent and entertaining
+          AI conversations.
+        </p>
 
-        {features.map((feature) => (
+      </div>
+
+      <div className="mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+
+        {FEATURES.map((feature) => (
           <FeatureCard
             key={feature.title}
             title={feature.title}
@@ -48,7 +63,6 @@ function Features() {
         ))}
 
       </div>
-
     </section>
   );
 }
