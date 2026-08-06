@@ -1,3 +1,4 @@
+import Features from "../components/home/Features";
 import Navbar from "../components/layout/Navbar";
 import Hero from "../components/home/Hero";
 import BackgroundGlow from "../components/ui/BackgroundGlow";
@@ -11,6 +12,8 @@ function Home() {
       <Navbar />
 
       <Hero />
+
+      <Features />
 
     </div>
   );
