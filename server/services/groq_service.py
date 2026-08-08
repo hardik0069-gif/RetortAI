@@ -1,3 +1,4 @@
+from prompts.system_prompts import SYSTEM_PROMPTS
 import os
 from dotenv import load_dotenv
 from groq import Groq
@@ -13,11 +14,15 @@ def ask_ai(message: str):
     response = client.chat.completions.create(
         model="llama-3.3-70b-versatile",
         messages=[
-            {
-                "role": "user",
-                "content": message,
-            }
-        ],
+    {
+        "role": "system",
+        "content": SYSTEM_PROMPTS["normal"],
+    },
+    {
+        "role": "user",
+        "content": message,
+    },
+    ],
         temperature=0.7,
     )
 
