@@ -23,6 +23,9 @@ def home():
 
 @app.post("/chat")
 def chat(data: ChatRequest):
-    return {
-        "reply": f"You said: {data.message}"
-    }
+
+   from services.groq_service import ask_ai
+
+   return {
+       "reply": ask_ai(data.message)
+   }
