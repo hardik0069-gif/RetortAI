@@ -12,8 +12,8 @@ export async function sendMessage(message) {
   });
 
   if (!response.ok) {
-    throw new Error("Failed to fetch response.");
+    throw new Error("Backend Error");
   }
 
-  return response.json();
+  return await response.json();
 }
