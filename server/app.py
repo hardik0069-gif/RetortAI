@@ -1,3 +1,4 @@
+from services.groq_service import ask_ai
 from fastapi import FastAPI
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
@@ -23,9 +24,8 @@ def home():
 
 @app.post("/chat")
 def chat(data: ChatRequest):
+    reply = ask_ai(data.message)
 
-   from services.groq_service import ask_ai
-
-   return {
-       "reply": ask_ai(data.message)
-   }
+    return {
+        "reply": reply
+    }
