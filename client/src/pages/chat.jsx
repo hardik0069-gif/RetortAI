@@ -5,7 +5,6 @@ import ChatInput from "../components/chat/ChatInput";
 function Chat() {
   return (
     <div className="min-h-screen bg-slate-950 text-white">
-
       <div className="mx-auto flex min-h-screen max-w-5xl flex-col px-6 py-8">
 
         <h1 className="text-3xl font-black">
@@ -25,7 +24,6 @@ function Chat() {
         <ChatInput />
 
       </div>
-
     </div>
   );
 }

@@ -18,13 +18,19 @@ function ChatInput() {
     setText("");
   }
 
+  function handleKeyDown(e) {
+    if (e.key === "Enter") {
+      handleSend();
+    }
+  }
+
   return (
     <div className="mt-6 flex gap-4">
-
       <input
+        type="text"
         value={text}
         onChange={(e) => setText(e.target.value)}
-        type="text"
+        onKeyDown={handleKeyDown}
         placeholder="Type your message..."
         className="flex-1 rounded-xl border border-slate-700 bg-slate-900 px-5 py-4 text-white outline-none focus:border-cyan-400"
       />
@@ -35,7 +41,6 @@ function ChatInput() {
       >
         Send
       </button>
-
     </div>
   );
 }
