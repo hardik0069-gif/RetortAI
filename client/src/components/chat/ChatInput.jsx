@@ -119,7 +119,7 @@ function ChatInput() {
             strokeWidth="1.8"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="h-[18px] w-[18px]"
+            className="h-4.5 w-4.5"
           >
             <rect x="9" y="3" width="6" height="11" rx="3" />
             <path d="M5 11a7 7 0 0 0 14 0" />
@@ -141,7 +141,7 @@ function ChatInput() {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="h-[18px] w-[18px]"
+            className="h-4.5 w-4.5"
           >
             <path d="M5 12h14" />
             <path d="m13 6 6 6-6 6" />
