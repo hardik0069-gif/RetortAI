@@ -1,7 +1,7 @@
-from services.groq_service import ask_ai
 from fastapi import FastAPI
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
+from services.groq_service import ask_ai
 
 app = FastAPI()
 
@@ -12,9 +12,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 class ChatRequest(BaseModel):
     message: str
+    mode: str = "normal"
 
 @app.get("/")
 def home():
@@ -24,7 +24,10 @@ def home():
 
 @app.post("/chat")
 def chat(data: ChatRequest):
-    reply = ask_ai(data.message)
+    reply = ask_ai(
+        data.message,
+        data.mode
+    )
 
     return {
         "reply": reply

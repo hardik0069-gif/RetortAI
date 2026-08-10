@@ -1,7 +1,10 @@
-from prompts.system_prompts import SYSTEM_PROMPTS
 import os
+import random
+
 from dotenv import load_dotenv
 from groq import Groq
+
+from prompts.system_prompts import SYSTEM_PROMPTS
 
 load_dotenv()
 
@@ -10,20 +13,38 @@ client = Groq(
 )
 
 
-def ask_ai(message: str):
+def ask_ai(message: str, mode: str = "normal"):
+    if mode == "random":
+        mode = random.choice(
+            [
+                "roast",
+                "dark",
+                "gen-z",
+                "friendly",
+                "mentor",
+                "bachhi",
+            ]
+        )
+
+    prompt = SYSTEM_PROMPTS.get(
+        mode,
+        SYSTEM_PROMPTS["normal"],
+    )
+
     response = client.chat.completions.create(
         model="llama-3.3-70b-versatile",
         messages=[
-    {
-        "role": "system",
-        "content": SYSTEM_PROMPTS["normal"],
-    },
-    {
-        "role": "user",
-        "content": message,
-    },
-    ],
-        temperature=0.7,
+            {
+                "role": "system",
+                "content": prompt,
+            },
+            {
+                "role": "user",
+                "content": message,
+            },
+        ],
+        temperature=0.9,
+        max_tokens=100,
     )
 
-    return response.choices[0].message.content
+    return response.choices[0].message.content.strip()
