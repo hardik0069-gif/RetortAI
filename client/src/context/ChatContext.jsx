@@ -54,8 +54,10 @@ export function ChatProvider({ children }) {
 
   useEffect(() => {
     if (activeChatId) {
-      localStorage.setItem("retortai_active_chat", activeChatId);
-    }
+    localStorage.setItem("retortai_active_chat", activeChatId);
+  } else {
+    localStorage.removeItem("retortai_active_chat");
+  }
   }, [activeChatId]);
 
   useEffect(() => {

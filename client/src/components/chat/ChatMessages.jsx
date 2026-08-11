@@ -87,7 +87,7 @@ function ChatMessages() {
                       <button
                         type="button"
                         onClick={() => copyMessage(message)}
-                        className="text-neutral-700 opacity-0 transition hover:text-neutral-300 group-hover:opacity-100"
+                        className="text-neutral-600 opacity-70 transition hover:text-white sm:opacity-0 sm:group-hover:opacity-100"
                         aria-label="Copy response"
                       >
                         {copiedId === message.id ? (
@@ -119,7 +119,7 @@ function ChatMessages() {
                       <button
                         type="button"
                         onClick={() => speakMessage(message)}
-                        className="text-neutral-700 opacity-0 transition hover:text-neutral-300 group-hover:opacity-100"
+                        className="text-neutral-600 opacity-70 transition hover:text-white sm:opacity-0 sm:group-hover:opacity-100"
                         aria-label="Speak response"
                       >
                         <svg
