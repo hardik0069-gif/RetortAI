@@ -2,9 +2,16 @@ import { useEffect, useRef, useState } from "react";
 import { useChat } from "../../hooks/useChat";
 
 function ChatMessages() {
-  const { messages, loading } = useChat();
+  const {
+    messages,
+    loading,
+    chats,
+    activeChatId,
+  } = useChat();
+
   const [copiedId, setCopiedId] = useState(null);
   const [speakingId, setSpeakingId] = useState(null);
+  const [shareCopied, setShareCopied] = useState(false);
 
   const bottomRef = useRef(null);
 
@@ -55,9 +62,82 @@ function ChatMessages() {
     window.speechSynthesis.speak(utterance);
   }
 
+  async function shareChat() {
+    const activeChat = chats.find(
+      (chat) => chat.id === activeChatId
+    );
+
+    if (!activeChat) return;
+
+    const data = encodeURIComponent(
+      btoa(
+        unescape(
+          encodeURIComponent(
+            JSON.stringify({
+              title: activeChat.title,
+              messages: activeChat.messages,
+            })
+          )
+        )
+      )
+    );
+
+    const shareUrl = `${window.location.origin}/share?chat=${data}`;
+
+    try {
+      if (navigator.share) {
+        await navigator.share({
+          title: "RetortAI Chat",
+          text: "Check out this RetortAI conversation.",
+          url: shareUrl,
+        });
+
+        return;
+      }
+
+      await navigator.clipboard.writeText(shareUrl);
+
+      setShareCopied(true);
+
+      setTimeout(() => {
+        setShareCopied(false);
+      }, 1800);
+    } catch (error) {
+      if (error?.name !== "AbortError") {
+        console.error(error);
+      }
+    }
+  }
+
   return (
-    <div className="h-full overflow-y-auto px-1 sm:px-3">
-      <div className="mx-auto flex w-full max-w-3xl flex-col gap-7">
+    <div className="h-full overflow-y-auto">
+      <div className="mx-auto flex w-full max-w-4xl flex-col gap-5 pb-6">
+        <div className="flex justify-end">
+          <button
+            type="button"
+            onClick={shareChat}
+            className="flex items-center gap-2 rounded-full border border-neutral-900 px-3 py-1.5 text-[9px] font-semibold uppercase tracking-[0.18em] text-neutral-600 transition hover:border-neutral-700 hover:text-white"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.7"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="h-3.5 w-3.5"
+            >
+              <circle cx="18" cy="5" r="3" />
+              <circle cx="6" cy="12" r="3" />
+              <circle cx="18" cy="19" r="3" />
+              <path d="m8.6 13.5 6.8 4" />
+              <path d="m15.4 6.5-6.8 4" />
+            </svg>
+
+            {shareCopied ? "Copied" : "Share"}
+          </button>
+        </div>
+
         {messages.map((message) => {
           const isUser = message.role === "user";
 
