@@ -103,6 +103,13 @@ function Home() {
               Chat
             </Link>
 
+            <Link
+              to="/about"
+              className="transition hover:text-white"
+            >
+              About
+            </Link>
+
             <a
               href="https://github.com/"
               target="_blank"

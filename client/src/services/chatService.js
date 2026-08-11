@@ -25,20 +25,23 @@ export async function generateTagline(previousTaglines = []) {
       ? previousTaglines.join(" | ")
       : "None";
 
-  const prompt = `
-Create ONE original homepage tagline for RetortAI.
+const prompt = `
+Create ONE short homepage tagline for RetortAI.
 
-RetortAI is a modern AI chat app with personality, attitude, humour and different conversation modes.
+RetortAI is an AI chat app where users can choose different personalities such as Roast, Dark, Gen-Z, Friendly, Mentor, Random and Bachhi.
 
-STYLE:
+The tagline should make a normal visitor immediately understand that RetortAI is an AI they can chat with and that it has personality.
+
+Rules:
 - Maximum 7 words
-- Punchy and memorable
-- Modern startup/product feel
-- Clever rather than cheesy
-- Confident, slightly rebellious
-- Can be witty, dark, playful or Gen-Z
-- Must sound like a real brand tagline
-- No generic AI clichés
+- Very easy to understand
+- Short and punchy
+- Modern
+- Clever
+- Natural
+- No complicated words
+- No abstract phrases
+- No corporate marketing language
 - No motivational quotes
 - No cringe
 - No emojis
@@ -46,37 +49,32 @@ STYLE:
 - Return ONLY the tagline
 
 LANGUAGE:
-Choose randomly between these two styles:
+Randomly choose either:
 1. Natural English
 2. Natural Hinglish written in Roman letters
 
-Do NOT always choose Hinglish.
-Approximately half should be English and half should be Hinglish.
+Keep English and Hinglish roughly 50/50.
 
-For Hinglish:
-- Use natural Indian conversational language
-- Mix Hindi and English organically
-- Do not translate an English slogan word-for-word
-- Avoid basic phrases such as "Baat karo", "Retort lo", "Sawaal tera", "Mera attitude"
-- Make it sound sharp, clever and brand-worthy
+Good English style:
+"AI that talks back."
+"Your AI, with an attitude."
+"Chat with a personality."
+"Ask anything. Get a retort."
+"AI, but less boring."
 
-Examples of the QUALITY and STYLE wanted:
-"AI with a little attitude."
-"Your chat, your rules."
-"Thoda chaos, kaafi personality."
-"Answers, but make them interesting."
-"Normal is not the default."
-"AI jo vibe samjhe."
-"Talk smart. Get interesting."
-"Seedhe answers, zero boring energy."
+Good Hinglish style:
+"AI jo seedha jawab de."
+"Baat karo, boring nahi."
+"AI jo tumhari vibe samjhe."
+"Normal AI se thoda alag."
 
-These examples are only style references.
-Do NOT copy them or create close variations.
+These are examples of quality only.
+Do not copy them or create close variations.
 
 Previous taglines:
 ${previous}
 
-Create something completely different from all previous taglines.
+Create something completely new.
 `;
 
   const response = await fetch(`${API_URL}/chat`, {

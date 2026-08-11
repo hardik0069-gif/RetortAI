@@ -67,9 +67,34 @@ function Chat() {
               </div>
             </div>
 
-            <div className="text-[10px] font-semibold uppercase tracking-[0.25em] text-neutral-700">
-              Chat
-            </div>
+          <div className="flex items-center gap-4 text-[9px] font-semibold uppercase tracking-[0.18em] text-neutral-600 sm:gap-5 sm:text-[10px]">
+          <span className="text-white">
+            Chat
+          </span>
+
+          <a
+            href="/about"
+            className="transition hover:text-white"
+          >
+            About
+          </a>
+
+          <a
+            href="https://github.com/"
+            target="_blank"
+            rel="noreferrer"
+            className="transition hover:text-white"
+          >
+            GitHub
+          </a>
+
+          <a
+            href="#"
+            className="transition hover:text-white"
+          >
+            LinkedIn
+          </a>
+          </div>
           </header>
 
           <section className="flex min-h-0 flex-1 flex-col px-4 sm:px-6 lg:px-10">
