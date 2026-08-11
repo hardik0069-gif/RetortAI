@@ -1,4 +1,4 @@
-const API_URL = "http://127.0.0.1:8000";
+const API_URL = "https://retortai-api.onrender.com";
 
 export async function sendMessage(message, mode) {
   const response = await fetch(`${API_URL}/chat`, {
