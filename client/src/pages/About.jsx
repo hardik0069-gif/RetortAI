@@ -65,8 +65,8 @@ function About() {
             <a
               href={APP.github}
               target="_blank"
-              rel="noreferrer"
-              className="whitespace-nowrap transition             hover:text-white"
+              rel="noopener noreferrer"
+              className="whitespace-nowrap transition hover:text-white"
             >
               GitHub
             </a>
@@ -74,8 +74,8 @@ function About() {
             <a
               href={APP.linkedin}
               target="_blank"
-              rel="noreferrer"
-              className="whitespace-nowrap transition             hover:text-white"
+              rel="noopener noreferrer"
+              className="whitespace-nowrap transition hover:text-white"
             >
               LinkedIn
             </a>
@@ -143,11 +143,7 @@ function About() {
               {MODES.map((mode, index) => (
                 <div
                   key={mode.name}
-                  className={`group min-h-44 border-b border-r border-neutral-900 p-6 transition hover:bg-white/[0.025] ${
-                    index === MODES.length - 1
-                      ? "lg:col-span-1"
-                      : ""
-                  }`}
+                  className="group min-h-44 border-b border-r border-neutral-900 p-6 transition hover:bg-white/[0.025]"
                 >
                   <div className="flex items-start justify-between">
                     <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-neutral-700">
@@ -199,53 +195,54 @@ function About() {
             </div>
           </div>
 
-          <div className="mt-24 border-t border-neutral-900              pt-10">
+          <div className="mt-24 border-t border-neutral-900 pt-10">
             <div className="grid gap-10 sm:grid-cols-2">
               <div>
-                <p className="text-[9px] font-bold uppercase              tracking-[0.3em] text-neutral-700">
+                <p className="text-[9px] font-bold uppercase tracking-[0.3em] text-neutral-700">
                   WHY RETORTAI?
                 </p>
 
-                <h2 className="mt-4 max-w-md text-3xl              font-bold leading-tight tracking-[-0.05em]              sm:text-4xl">
-                  T             here is a reason behind the name.
+                <h2 className="mt-4 max-w-md text-3xl font-bold leading-tight tracking-[-0.05em] sm:text-4xl">
+                  There is a reason behind the name.
                 </h2>
               </div>
 
               <div className="space-y-8">
                 <div>
-                  <p className="text-[9px] font-bold uppercase              tracking-[0.3em] text-neutral-700">
+                  <p className="text-[9px] font-bold uppercase tracking-[0.3em] text-neutral-700">
                     THE NAME
                   </p>
 
-                  <h3 className="mt-3 text-xl font-bold              tracking-[-0.03em] text-neutral-200">
+                  <h3 className="mt-3 text-xl font-bold tracking-[-0.03em] text-neutral-200">
                     Retort + AI
                   </h3>
 
-                  <p className="mt-3 text-sm leading-7              text-neutral-600">
-                    “Retort” means a quick, sharp or witty              reply. RetortAI takes that
-                    idea and turns it into an AI built around              personality, attitude and
-                    conversation.
+                  <p className="mt-3 text-sm leading-7 text-neutral-600">
+                    “Retort” means a quick, sharp or witty reply. RetortAI
+                    takes that idea and turns it into an AI built around
+                    personality, attitude and conversation.
                   </p>
                 </div>
 
                 <div>
-                  <p className="text-[9px] font-bold uppercase              tracking-[0.3em] text-neutral-700">
+                  <p className="text-[9px] font-bold uppercase tracking-[0.3em] text-neutral-700">
                     THE LOGO
                   </p>
 
-                  <h3 className="mt-3 text-xl font-bold              tracking-[-0.03em] text-neutral-200">
+                  <h3 className="mt-3 text-xl font-bold tracking-[-0.03em] text-neutral-200">
                     Why the T?
                   </h3>
 
-                  <p className="mt-3 text-sm leading-7              text-neutral-600">
-                    The T represents “Retort” — the sharp              comeback behind the
-                    personality. The contrasting AI treatment              represents the artificial
-                    intelligence behind it. Together, they              form the RetortAI identity.
+                  <p className="mt-3 text-sm leading-7 text-neutral-600">
+                    The T represents “Retort” — the sharp comeback behind the
+                    personality. The contrasting AI treatment represents the
+                    artificial intelligence behind it. Together, they form the
+                    RetortAI identity.
                   </p>
                 </div>
 
-                <p className="border-l border-neutral-800 pl-5              text-sm font-medium leading-7              text-neutral-400">
-                  Not just an AI that answers. An AI that has              a retort.
+                <p className="border-l border-neutral-800 pl-5 text-sm font-medium leading-7 text-neutral-400">
+                  Not just an AI that answers. An AI that has a retort.
                 </p>
               </div>
             </div>
@@ -273,52 +270,51 @@ function About() {
               </span>
             </Link>
           </div>
+
+          <div className="mt-24 border-t border-neutral-900 pt-10">
+            <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <p className="text-[9px] font-bold uppercase tracking-[0.3em] text-neutral-700">
+                  BUILT BY
+                </p>
+
+                <h2 className="mt-3 text-3xl font-bold tracking-[-0.05em] sm:text-4xl">
+                  Hardik Kataria
+                </h2>
+
+                <p className="mt-3 max-w-md text-sm leading-7 text-neutral-600">
+                  RetortAI is a personal project built around the idea that AI
+                  conversations can have more personality, attitude and
+                  character.
+                </p>
+              </div>
+
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href={APP.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full border border-neutral-800 px-5 py-2.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-neutral-500 transition hover:border-neutral-600 hover:text-white"
+                >
+                  GitHub
+                </a>
+
+                <a
+                  href={APP.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full border border-neutral-800 px-5 py-2.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-neutral-500 transition hover:border-neutral-600 hover:text-white"
+                >
+                  LinkedIn
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
 
         <footer className="mx-auto flex max-w-5xl items-center justify-between border-t border-neutral-900 py-5 text-[9px] font-semibold uppercase tracking-[0.25em] text-neutral-700">
           <span>RETORTAI</span>
           <span>AI WITH ATTITUDE</span>
-
-          <div className="mt-24 border-t border-neutral-900 pt-10">
-          
-          <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-          <p className="text-[9px] font-bold uppercase tracking-[0.3em] text-neutral-700">
-            BUILT BY
-          </p>
-
-             <h2 className="mt-3 text-3xl font-bold tracking-[-0.05em] sm:text-4xl">
-               Hardik Kataria
-             </h2>
-
-             <p className="mt-3 max-w-md text-sm leading-7 text-neutral-600">
-              RetortAI is a personal project built around     the idea that AI
-              conversations can have more  personality,     attitude and character.
-             </p>
-            </div>
-
-            <div className="flex flex-wrap gap-3">
-            <a
-              href="https://github.com/hardik0069-gif/         RetortAI"
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-full border        border-neutral-800 px-5 py-2.5 text-[10px]        font-semibold uppercase tracking-[0.18em]        text-neutral-500 transition        hover:border-neutral-600 hover:text-white"
-            >
-              GitHub
-            </a>
-
-            <a
-            href="https://www.linkedin.com/in/      hardik-kataria-59bb83379/"
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-full border       border-neutral-800 px-5 py-2.5 text-[10px]       font-semibold uppercase tracking-[0.18em]       text-neutral-500 transition       hover:border-neutral-600 hover:text-white"
-            >
-              LinkedIn
-           </a>
-          </div>
-         </div>
-        </div>
-
         </footer>
       </section>
     </main>
