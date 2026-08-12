@@ -1,30 +1,31 @@
 import { Link } from "react-router-dom";
-import AnimatedBackground from "../components/ui/AnimatedBackground";
-import useRandomTagline from "../hooks/useRandomTagline";
+import useRandomTagline from "../../hooks/useRandomTagline";
 
 function Hero() {
   const tagline = useRandomTagline();
 
   return (
     <section className="relative z-10 mx-auto flex min-h-[calc(100vh-80px)] max-w-6xl flex-col items-center justify-center px-6 py-20 text-center">
-      <p className="text-[10px] font-bold uppercase tracking-[0.4em] text-neutral-700">
-        AI PERSONALITY CONVERSATION
+      <p className="text-[9px] font-bold uppercase tracking-[0.4em] text-neutral-700 sm:text-[10px]">
+        AI WITH ATTITUDE
       </p>
 
-      <h1 className="mt-7 text-[clamp(4rem,12vw,9rem)] font-black leading-[0.8] tracking-[-0.08em] text-white">
+      <h1 className="mt-7 text-[clamp(4rem,13vw,10rem)] font-black leading-[0.78] tracking-[-0.09em] text-white">
         RETORT<span className="text-neutral-600">AI</span>
       </h1>
 
-      <p className="mt-8 text-2xl font-semibold tracking-[-0.03em] text-neutral-200 sm:text-3xl">
-        {tagline}
-      </p>
+      <div className="mt-9 min-h-[72px] max-w-3xl">
+        <p className="text-2xl font-semibold leading-tight tracking-[-0.035em] text-neutral-200 sm:text-3xl">
+          {tagline}
+        </p>
+      </div>
 
       <p className="mt-5 max-w-xl text-sm leading-7 text-neutral-600 sm:text-base">
-        An AI that talks the way you want. Pick a personality, start a
-        conversation, and let RetortAI match your vibe.
+        Pick a personality. Start talking. Get responses with an attitude
+        that actually matches the conversation.
       </p>
 
-      <div className="mt-10 flex flex-wrap justify-center gap-3">
+      <div className="mt-9 flex flex-wrap justify-center gap-3">
         <Link
           to="/chat"
           className="group inline-flex items-center gap-4 rounded-full bg-white px-7 py-3.5 text-sm font-bold text-black transition hover:bg-neutral-200"
@@ -39,33 +40,33 @@ function Hero() {
           to="/about"
           className="rounded-full border border-neutral-800 px-7 py-3.5 text-sm font-semibold text-neutral-400 transition hover:border-neutral-600 hover:text-white"
         >
-          About RetortAI
+          Why RetortAI?
         </Link>
       </div>
 
-      <div className="mt-16 flex flex-wrap justify-center gap-2">
-        {["Roast", "Dark", "Gen-Z", "Friendly", "Mentor", "Random", "Bachhi"].map(
-          (mode) => (
-            <span
-              key={mode}
-              className="rounded-full border border-neutral-900 px-4 py-2 text-[9px] font-semibold uppercase tracking-[0.18em] text-neutral-700"
-            >
-              {mode}
-            </span>
-          )
-        )}
+      <div className="mt-14 flex max-w-3xl flex-wrap justify-center gap-2">
+        {[
+          "Roast",
+          "Dark",
+          "Gen-Z",
+          "Friendly",
+          "Mentor",
+          "Random",
+          "Bachhi",
+        ].map((mode) => (
+          <span
+            key={mode}
+            className="rounded-full border border-neutral-900 px-4 py-2 text-[9px] font-semibold uppercase tracking-[0.18em] text-neutral-700 transition hover:border-neutral-700 hover:text-neutral-400"
+          >
+            {mode}
+          </span>
+        ))}
       </div>
 
-      <div className="mt-14 max-w-2xl border-t border-neutral-900 pt-8">
-        <p className="text-[9px] font-semibold uppercase tracking-[0.25em] text-neutral-700">
-          CHOOSE YOUR ATTITUDE
-        </p>
-
-        <p className="mt-3 text-xs leading-6 text-neutral-600 sm:text-sm">
-          Roast it. Challenge it. Ask it. Talk to it. RetortAI lets you choose
-          how the conversation feels instead of giving every message the same
-          boring personality.
-        </p>
+      <div className="mt-14 flex items-center gap-3 text-[9px] font-semibold uppercase tracking-[0.25em] text-neutral-800">
+        <span className="h-px w-8 bg-neutral-900" />
+        Seven personalities
+        <span className="h-px w-8 bg-neutral-900" />
       </div>
     </section>
   );
