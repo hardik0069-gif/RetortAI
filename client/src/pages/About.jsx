@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import AnimatedBackground from "../components/ui/AnimatedBackground";
+import { APP } from "../config/app";
 
 const MODES = [
   {
@@ -62,17 +63,19 @@ function About() {
             </Link>
 
             <a
-              href="https://github.com/"
+              href={APP.github}
               target="_blank"
               rel="noreferrer"
-              className="whitespace-nowrap transition hover:text-white"
+              className="whitespace-nowrap transition             hover:text-white"
             >
               GitHub
             </a>
 
             <a
-              href="#"
-              className="whitespace-nowrap transition hover:text-white"
+              href={APP.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              className="whitespace-nowrap transition             hover:text-white"
             >
               LinkedIn
             </a>

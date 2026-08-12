@@ -2,86 +2,75 @@ import { APP } from "../../config/app";
 
 function Footer() {
   return (
-    <footer className="border-t border-slate-800 bg-slate-950">
-
-      <div className="mx-auto flex max-w-7xl flex-col gap-10 px-6 py-14 md:flex-row md:justify-between">
-
+    <footer className="border-t border-neutral-900 bg-[#050505]">
+      <div className="mx-auto flex max-w-7xl flex-col gap-10 px-6 py-12 sm:px-8 md:flex-row md:items-start md:justify-between">
         <div>
-
-          <h2 className="text-2xl font-black text-white">
+          <h2 className="text-xl font-black tracking-[-0.04em] text-white">
             {APP.name}
+            <span className="text-neutral-600">.</span>
           </h2>
 
-          <p className="mt-4 max-w-sm leading-7 text-slate-400">
-            An AI-powered chatbot built for fast, intelligent and entertaining conversations.
+          <p className="mt-3 max-w-sm text-sm leading-6 text-neutral-600">
+            AI with attitude. Pick a personality, start a conversation, and
+            get a response that actually has some character.
           </p>
-
         </div>
 
         <div>
-
-          <h3 className="font-semibold text-white">
-            Quick Links
-          </h3>
+          <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-neutral-700">
+            Explore
+          </p>
 
           <div className="mt-4 flex flex-col gap-3">
-
             <a
-              href="#features"
-              className="text-slate-400 transition hover:text-cyan-400"
+              href="/chat"
+              className="text-sm text-neutral-500 transition hover:text-white"
             >
-              Features
+              Chat
             </a>
 
             <a
-              href="#roadmap"
-              className="text-slate-400 transition hover:text-cyan-400"
-            >
-              Roadmap
-            </a>
-
-            <a
-              href="#about"
-              className="text-slate-400 transition hover:text-cyan-400"
+              href="/about"
+              className="text-sm text-neutral-500 transition hover:text-white"
             >
               About
             </a>
-
           </div>
-
         </div>
 
         <div>
-
-          <h3 className="font-semibold text-white">
-            Project
-          </h3>
+          <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-neutral-700">
+            Connect
+          </p>
 
           <div className="mt-4 flex flex-col gap-3">
-
             <a
-              href={APP.github}
+              href="https://github.com/hardik0069-gif/RetortAI"
               target="_blank"
               rel="noreferrer"
-              className="text-slate-400 transition hover:text-cyan-400"
+              className="text-sm text-neutral-500 transition hover:text-white"
             >
-              GitHub Repository
+              GitHub
             </a>
 
-            <p className="text-slate-400">
-              Version {APP.version}
-            </p>
-
+            <a
+              href="https://www.linkedin.com/in/hardik-kataria-59bb83379/"
+              target="_blank"
+              rel="noreferrer"
+              className="text-sm text-neutral-500 transition hover:text-white"
+            >
+              LinkedIn
+            </a>
           </div>
-
         </div>
-
       </div>
 
-      <div className="border-t border-slate-800 py-6 text-center text-sm text-slate-500">
-        © 2026 {APP.name}. All rights reserved.
+      <div className="border-t border-neutral-900 px-6 py-5 sm:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col gap-2 text-[9px] font-semibold uppercase tracking-[0.2em] text-neutral-700 sm:flex-row sm:items-center sm:justify-between">
+          <span>© 2026 {APP.name}</span>
+          <span>AI WITH ATTITUDE</span>
+        </div>
       </div>
-
     </footer>
   );
 }

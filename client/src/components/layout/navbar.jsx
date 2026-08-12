@@ -1,74 +1,66 @@
 import { Link } from "react-router-dom";
 import { Menu } from "lucide-react";
 import { APP } from "../../config/app";
-import Button from "../ui/Button";
 
 function Navbar() {
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-800/70 bg-slate-950/80 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-neutral-900/80 bg-[#050505]/85 backdrop-blur-xl">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
+        <Link
+          to="/"
+          className="text-xl font-black tracking-[-0.05em] text-white"
+        >
+          RETORTAI<span className="text-neutral-600">.</span>
+        </Link>
 
-        {/* Logo */}
-
-        <h1 className="text-3xl font-black tracking-tight text-white">
-          {APP.name}
-        </h1>
-
-        {/* Desktop */}
-
-        <nav className="hidden items-center gap-10 lg:flex">
-
-          <a
-            href="#features"
-            className="text-slate-300 transition hover:text-cyan-400"
+        <nav className="hidden items-center gap-8 lg:flex">
+          <Link
+            to="/chat"
+            className="text-[10px] font-semibold uppercase tracking-[0.2em] text-neutral-600 transition hover:text-white"
           >
-            Features
-          </a>
+            Chat
+          </Link>
 
-          <a
-            href="#roadmap"
-            className="text-slate-300 transition hover:text-cyan-400"
-          >
-            Roadmap
-          </a>
-
-          <a
-            href="#about"
-            className="text-slate-300 transition hover:text-cyan-400"
+          <Link
+            to="/about"
+            className="text-[10px] font-semibold uppercase tracking-[0.2em] text-neutral-600 transition hover:text-white"
           >
             About
-          </a>
-
-        </nav>
-
-        {/* Right Side */}
-
-        <div className="hidden items-center gap-4 lg:flex">
+          </Link>
 
           <a
             href={APP.github}
             target="_blank"
             rel="noreferrer"
+            className="text-[10px] font-semibold uppercase tracking-[0.2em] text-neutral-600 transition hover:text-white"
           >
-            <Button variant="secondary">
-              GitHub
-            </Button>
+            GitHub
           </a>
 
-          <Link to="/chat">
-          <Button>
-          Start Chat
-          </Button>
-          </Link>
+          <a
+            href={APP.linkedin}
+            target="_blank"
+            rel="noreferrer"
+            className="text-[10px] font-semibold uppercase tracking-[0.2em] text-neutral-600 transition hover:text-white"
+          >
+            LinkedIn
+          </a>
+        </nav>
 
-        </div>
+        <Link
+          to="/chat"
+          className="hidden rounded-full bg-white px-5 py-2.5 text-xs font-bold text-black transition hover:bg-neutral-200 lg:block"
+        >
+          Start Chat →
+        </Link>
 
-        {/* Mobile */}
-
-        <button className="rounded-xl border border-slate-700 p-3 text-slate-300 lg:hidden">
-          <Menu size={22} />
+        <button
+          type="button"
+          className="rounded-lg border border-neutral-800 p-2.5 text-neutral-500 transition hover:border-neutral-600 hover:text-white lg:hidden"
+          aria-label="Open navigation"
+        >
+          <Menu size={19} />
         </button>
-
       </div>
     </header>
   );
