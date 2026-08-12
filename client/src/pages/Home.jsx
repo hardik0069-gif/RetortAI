@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import AnimatedBackground from "../components/ui/AnimatedBackground";
 import { generateTagline } from "../services/chatService";
+import { APP } from "../config/app";
 
 function Home() {
   const [tagline, setTagline] = useState("Retort loading...");
@@ -111,16 +112,18 @@ function Home() {
             </Link>
 
             <a
-              href="https://github.com/"
+              href={APP.github}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="transition hover:text-white"
             >
               GitHub
             </a>
 
             <a
-              href="#"
+              href={APP.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
               className="transition hover:text-white"
             >
               LinkedIn
